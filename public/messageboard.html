@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+ <meta http-equiv="content-type" charset="utf-8">
+  <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="./massageboard.js"></script>
+
+ 
+  <script> 
+    var firebaseConfig = {
+    apiKey: "AIzaSyBDRb11DoqqTO3DzsCGPfgRW8kAphD_kgo",
+    authDomain: "chat001-16c14.firebaseapp.com",
+    databaseURL: "https://chat001-16c14.firebaseio.com",
+    projectId: "chat001-16c14",
+    storageBucket: "chat001-16c14.appspot.com",
+    messagingSenderId: "770731301137",
+    appId: "1:770731301137:web:33fe6f619c17cb92"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+    <style>
+            ul > li:first-child {
+             color: black;
+             font-size: 25px;
+            }
+            ul > li:nth-child(2n) {
+             color: blue;
+            }
+            ul > li:nth-child(2n):before {
+             content:"相手："
+            }
+          </style>
+ </head>
+
+ <body>
+
+  <div>
+      <p><h3>伝言メッセージ</h3>
+    </p>
+  </div>
+
+   <div>
+    <p>本文</p>
+    <textarea name="" id="jsi-mainmsg" cols="30" rows="4"></textarea>
+   </div>
+  </div>
+ 
+  <button name="button" id="jsi-setbtn">send message!</button>
+
+  <div>
+    <div>
+              
+    </div>
+  </div>
+ 
+  <ul id="jsi-msgboard" style="list-style:none;">
+    <li>～伝言メッセージ～</li>
+  </ul>
+ </body>
+</html>
