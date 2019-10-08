@@ -1,4 +1,4 @@
-var CHAT = CHAT || {};
+ var CHAT = CHAT || {};
 
 CHAT.fire = {
   init:function(){
