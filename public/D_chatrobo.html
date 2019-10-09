@@ -3,6 +3,8 @@
 
 <head>
  <meta http-equiv="content-type" charset="utf-8">
+ <title>ヘルパーロボホン</title>
+ <link rel="stylesheet" href="./css/styleChat.css">
   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
@@ -41,30 +43,33 @@
 
   <div>
    <div>
-    <p>ユーザ名</p>
-     <p><input type="hidden" name="" id="jsi-name" value="web"/>user1</p>
+    <p class="UserName">ユーザ名 ：
+    <input type="hidden" name="" id="jsi-name" value="web"/>user1</p>
    </div>
 
    
    <div>
-    <p>内容</p>
+    <p class="Content">内容</p>
     <textarea name="" id="jsi-msg" cols="30" rows="4"></textarea>
    </div>
   </div>
  
-  <button name="button" id="jsi-button" disabled>send message!</button>
+  <button class="button" type="submit" id="jsi-button" disabled>送信</button>
 
   <div>
     <div>
-      <div style="margin:10px;">
+      <div style="margin:10px;"></div>
           <button type="button" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >チャットをする</button>
           <button type="button" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true;" >ロボホンに任せる</button>
       </div>
     </div>
   </div>
  
+  <div style="width:auto;height:600px;overflow:auto;">
   <ul id="jsi-board" style="list-style:none;">
     <li>～チャット内容～</li>
   </ul>
+  </div>
+
  </body>
 </html>

@@ -1,0 +1,37 @@
+body {
+    background: honeydew;
+}
+
+p{
+    font-weight: bold;
+}
+
+p.UserName{
+    font-size: 36px;
+}
+
+p.Content{
+    font-size: 20px;
+}
+
+.button{
+        /* 文字サイズを1.4emに指定 */
+        font-size: 1.4em;
+     
+        /* 文字の太さをboldに指定 */
+        font-weight: bold;
+     
+        /* 縦方向に10px、
+         * 横方向に93pxの余白を指定 */
+        padding: 10px 93px;
+    }
+    
+
+.robot img {
+    margin: 10px auto;
+    width:500px;
+ }
+
+ul {
+    text-align: center;
+  }
