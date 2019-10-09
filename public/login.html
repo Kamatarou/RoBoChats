@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
- <meta http-equiv="content-type" charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1" http-equiv="content-type" charset="utf-8">
  <title>Helper RoBoHoN</title>
  <link rel="stylesheet" href="./css/styleLogin.css">
 
@@ -36,25 +36,27 @@
    <div>
     <p class = "title">ヘルパーロボホン</p>
    </div>
-   <div>
+  <div>
 
-    <p class = "sub">メールアドレス<br>
-     <textarea name="" id="jsi-mail" cols="30" rows="1" style="font-size:60%;"></textarea></p>
-    </div>
+  <div>
+   <p class = "sub">メールアドレス<br>
+   <textarea class="text" placeholder="email"  id="jsi-mail" cols="30" rows="1"></textarea></p>
+  </div>
    
-   <div>
-    <p class = "sub">パスワード<br>
-    <input type="password" name="" id="jsi-pass" size="30" style="font-size:55%;"></p>
-   </div>
-
+  <div>
+   <p class = "sub">パスワード<br>
+   <textarea class="text" placeholder="password" cols="30" rows="1" input type="password" id="jsi-pass" size="30" style="font-size:55%;"></textarea></p>
   </div>
 
-  <div class="button">
-    <input id="submit_button" type="button" name="button" value="新規登録" onclick="location.href='./sign_up.html'"></button>
+  <div>
+    <p></p>
+    <button class="sendButton" type="submit" name="button" onclick="location.href='./sign_up.html'">新規登録</button>
   </div>
 
-  <div class="button">
-    <input id="submit_button" type="button" name="button" value="ログイン" id="jsi-login"></button>
+  <div>
+    <p></p>
+    <button class="sendButton" type="submit" name="button" id="jsi-login">ログイン</button>
   </div>
+
  </body>
 </html>

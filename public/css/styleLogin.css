@@ -1,32 +1,37 @@
 body {
     background: honeydew;
-    height: 300vh;
 }
 
 p{
+    font-size: 40px;
     font-weight: bold;
-    text-align:center;
-
-    margin: 50px 50px auto;
 }
 
 p.title{
-    font-size: 100px;
     font-family: ほのか丸ゴシック;
+    text-align: center;
 }
 
 p.sub{
-    font-size: 56px;
     font-family: ほのか丸ゴシック;
+    font-size: 20px;
+    text-align: center;
 }
 
-.robot img {
-    margin: 50px 50px auto;
-    width:500px;
- }
+.text {
+    border: 2px solid #070c07;  /* 枠線 */
+    border-radius: 0.67em;        /* 角丸 */
+    padding: 0.5em;               /* 内側の余白量 */
+    background-color: snow;     /* 背景色 */
+    width: 100%;                  /* 横幅いっぱいにする */
+    box-sizing: border-box;       /* ※これがないと横にはみ出る */
+    height: 50px;                 /* 高さ */
+    font-size: 1em;               /* 文字サイズ */
+    line-height: 1.2;             /* 行の高さ */
+}
 
-input#submit_button {
-    width:600px;
+.sendButton {
+    width:300px;
     font-size:24px;
     font-weight:bold;
     text-decoration:none;
@@ -41,12 +46,5 @@ input#submit_button {
 
     margin-left: auto;
     margin-right: auto;
-}
-
-div.button {
-    text-align:center;
-    }
-div.button input {
-    margin: 100px auto;
 }
 

@@ -53,7 +53,7 @@ p.Content{
 }
 
 .sendButton {
-    width:600px;
+    width:300px;
     font-size:24px;
     font-weight:bold;
     text-decoration:none;
@@ -73,13 +73,8 @@ p.Content{
 :disabled { 
         background-color: #cccccc; 
 }
-    
 
-.robot img {
-    margin: 10px auto;
-    width:500px;
- }
-
-ul {
+li {
     text-align: center;
+    margin-right: 50px;
   }
