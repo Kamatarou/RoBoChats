@@ -61,7 +61,7 @@ CHAT.fire = {
 	  console.log("fkey->" + fkey);
     
     
-    self.chatDataStore.child("chat").child(fkey).set({device:name, message:text, firebaseKey:fkey, isSpeech:'true'});
+    self.chatDataStore.child("chat").child(fkey).set({device:name, message:text, firebasekey:fkey, isSpeech:'true'});
     self.$textArea.val('');
   },
 
