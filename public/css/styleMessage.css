@@ -1,7 +1,5 @@
 body {
     background: honeydew;
-    height: 300vh;
-    margin-left: 50px;
 }
 
 p{
@@ -30,13 +28,8 @@ p.title{
     border:10px;
 }
 
-.robot img {
-    margin: 50px 50px auto;
-    width:500px;
- }
-
 .sendButton {
-    width:600px;
+    width:300px;
     font-size:24px;
     font-weight:bold;
     text-decoration:none;
