@@ -3,7 +3,7 @@
 
 <head>
  <meta http-equiv="content-type" charset="utf-8">
- <title>ヘルパーロボホン</title>
+ <title>Helper RoBoHoN</title>
  <link rel="stylesheet" href="./css/styleChat.css">
   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
@@ -49,20 +49,18 @@
 
    
    <div>
-    <p class="Content">内容</p>
-    <textarea name="" id="jsi-msg" cols="30" rows="4"></textarea>
+    <p class="Content">チャットを送ろう！</p>
+    <p class="Content">
+        <button class="chatButton" type="submit" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >チャットをする</button>
+        <button class="chatButton" type="submit" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true;" >ロボホンとお話し</button>  
+    </p>
+    <textarea class="text" placeholder="内容を入力" id="jsi-mainmsg" cols="30" rows="4"></textarea>
    </div>
   </div>
- 
-  <button class="button" type="submit" id="jsi-button" disabled>送信</button>
 
   <div>
-    <div>
-      <div style="margin:10px;"></div>
-          <button type="button" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >チャットをする</button>
-          <button type="button" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true;" >ロボホンに任せる</button>
-      </div>
-    </div>
+    <p></p>
+      <button class="sendButton" type="submit" id="jsi-button" disabled>送信</button>
   </div>
  
   <div style="width:auto;height:600px;overflow:auto;">
