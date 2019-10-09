@@ -8,7 +8,7 @@ CHAT.fire = {
 
   setParameters:function(){
     this.$name = $('#jsi-name');
-    this.$textArea = $('#jsi-msg');
+    this.$textArea = $('#jsi-mainmsg');
     this.$board = $('#jsi-board');
     this.$button = $('#jsi-button');
     this.$fbotswitch = $('#jsi-switch');
