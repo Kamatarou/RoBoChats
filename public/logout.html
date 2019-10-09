@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+ <meta http-equiv="content-type" charset="utf-8">
+ <title>Helper RoBoHoN</title>
+ <link rel="stylesheet" href="./css/styleLogout.css">
+ 
+  <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="logout.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"></script>
+  <script>
+    
+    var firebaseConfig = {
+    apiKey: "AIzaSyBDRb11DoqqTO3DzsCGPfgRW8kAphD_kgo",
+    authDomain: "chat001-16c14.firebaseapp.com",
+    databaseURL: "https://chat001-16c14.firebaseio.com",
+    projectId: "chat001-16c14",
+    storageBucket: "",
+    messagingSenderId: "770731301137",
+    appId: "1:770731301137:web:33fe6f619c17cb92"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+ </head>
+
+ <body>
+  <div>
+   <div>
+    <p class="title">ログアウトしますか？</p>
+   </div>
+ <div class="button">
+  <input id="submit_button" type="button" name="button" value="ログアウトする" id="jsi-logout"></button>
+  <input id="submit_button" type="button" name="button" value="戻る" onclick="location.href='./index.html'"></button>
+ </div>
+ </body>
+</html>

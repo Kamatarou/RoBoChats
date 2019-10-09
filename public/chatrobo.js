@@ -11,25 +11,43 @@ CHAT.fire = {
     this.$textArea = $('#jsi-msg');
     this.$board = $('#jsi-board');
     this.$button = $('#jsi-button');
-
+    this.$fbotswitch = $('#jsi-switch');
+    this.$tbotswitch = $('#jsi-switch2');
     
     this.chatDataStore = new Firebase('https://chat001-16c14.firebaseio.com/');
   },
 
   bindEvent:function(){
     var self = this;
+    self.chatDataStore.child("stats").child("isBot").set(true);
     this.$button.on('click',function(){
       self.sendMsg();
+    });
+    this.$fbotswitch.on('click',function(){
+      self.changeisBotF();
+    });
+    this.$tbotswitch.on('click',function(){
+      self.changeisBotT();
     });
 
    
     this.chatDataStore.child("chat").on('child_added',function(data){
+      console.log('on');
       var json = data.val();
       self.addText(json['device']);
       self.addText(json['message']);
     });
   },
 
+  changeisBotF:function(){
+    var self = this;
+    self.chatDataStore.child("stats").child("isBot").set(false);
+  },
+  
+  changeisBotT:function(){
+    var self = this;
+    self.chatDataStore.child("stats").child("isBot").set(true);
+  },
   
   sendMsg:function(){
     var self = this;

@@ -4,14 +4,19 @@ body {
 }
 
 p{
-    font-size: 56px;
     font-weight: bold;
     text-align:center;
 
-    margin: 100px 50px auto;
+    margin: 50px 50px auto;
 }
 
 p.title{
+    font-size: 100px;
+    font-family: ほのか丸ゴシック;
+}
+
+p.sub{
+    font-size: 56px;
     font-family: ほのか丸ゴシック;
 }
 
@@ -42,6 +47,6 @@ div.button {
     text-align:center;
     }
 div.button input {
-    margin: 150px 0px;
+    margin: 100px auto;
 }
 
