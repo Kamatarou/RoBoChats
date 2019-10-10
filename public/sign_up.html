@@ -2,25 +2,44 @@
 
 <html lang="ja">
   <head>
-    <meta http-equiv="content-type" charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" http-equiv="content-type" charset="utf-8">
     <title>Helper RoBoHoN</title>
-    <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="./css/styleSignup.css">
   </head>
 
   <body>
-    <div class="font_test">
 
     <p class="title">新規登録</p>
 
-    <p class="robot">
-        <img src="./css/mid.png" alt="ロボット">
-    </p>
-
-    <div class="button">
-      <input id="submit_button" type="button" name="button" value="伝言" onclick="location.href='./D_chat.html'"></button>
-      <input id="submit_button" type="button" name="button" value="チャット" onclick="location.href='./D_chatrobo.html'"></button>
-      <input id="submit_button" type="button" name="button" value="ログアウト" onclick="location.href='./logout.html'"></button>
+    <div>
+      <p class = "sub">ニックネーム<br>
+      <textarea class="text" placeholder="nickname"  id="jsi-mail" cols="30" rows="1"></textarea></p>
     </div>
+
+    <div>
+      <p class = "sub">ユーザーID<br>
+      <textarea class="text" placeholder="userID"  id="jsi-mail" cols="30" rows="1"></textarea></p>
+    </div>
+
+    <div>
+      <p class = "sub">メールアドレス<br>
+      <textarea class="text" placeholder="email"  id="jsi-mail" cols="30" rows="1"></textarea></p>
+    </div>
+      
+    <div>
+      <p class = "sub">パスワード<br>
+      <textarea class="text" placeholder="password" cols="30" rows="1" input type="password" id="jsi-pass" size="30" style="font-size:55%;"></textarea></p>
+    </div>
+
+    <div>
+      <p class = "sub">確認用パスワード<br>
+      <textarea class="text" placeholder="Confirmation password" cols="30" rows="1" input type="password" id="jsi-pass" size="30" style="font-size:55%;"></textarea></p>
+    </div>
+
+    <div>
+      <p></p>
+      <button class="sendButton" type="submit" name="button" id="jsi-login">ログイン</button>
+    </div>
+
   </body>
 </html>
