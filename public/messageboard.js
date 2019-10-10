@@ -34,8 +34,15 @@ CHAT.fire = {
     var self = this;
     if (this.$textArea.val() == ''){ return };
 
+    //プルダウンリストの取得
+    const sendTime = document.formTime.sendTime;
+    const numTime = sendTime.selectedIndex;
+    //時間の設定
+    const time = sendTime.options[numTime].value;
+    if(!time){ return };
+    console.log(time);
+
     var name = "みんな";
-    var time = "morning";
     var text = this.$textArea.val();
     
     self.chatDataStore.child("msgboard").child(name).set({name:name, message:text, time:time, isListen:'false'});
