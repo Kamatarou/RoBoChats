@@ -8,7 +8,12 @@ CHAT.fire = {
 
   setParameters:function(){
     this.$name = $('#jsi-name');
-    this.$textArea = $('#jsi-mainmsg');
+    this.$textArea = $('#jsi-mainmsg')
+
+    //チェック
+    this.$p = $('#jsi-p');
+    this.$text = $('#jsi-text');
+
     this.$board = $('#jsi-board');
     this.$button = $('#jsi-button');
     this.$fbotswitch = $('#jsi-switch');
@@ -37,6 +42,23 @@ CHAT.fire = {
       self.addText(json['device']);
       self.addText(json['message']);
     });
+
+    //チェック
+    this.chatDataStore.child('stats').on('value',function(data){
+       var name = data.child('nickname').val();
+       var username = "ユーザー名："+name;
+       console.log(username);
+       self.changename(username);
+    });
+
+    //チェック
+    this.chatDataStore.child('minus').on('child_added',function(data){
+       var text = data.val().score;
+       var usertext = text;
+       console.log(usertext);
+       self.changetext(usertext);
+    });
+    
   },
 
   changeisBotF:function(){
@@ -70,7 +92,22 @@ CHAT.fire = {
    var msgDom = $('<li>');
    msgDom.html(json);
    this.$board.append(msgDom[0]);
+  },
+
+  //チェック
+  changename:function(username){
+    var msgDom = $('<li>');
+    msgDom.html(username);
+    this.$p.append(msgDom[0]);
+  },
+
+  //チェック
+  changetext:function(usertext){
+      var msgDom = $('<li>');
+      msgDom.html(usertext);
+      this.$text.append(msgDom[0]);
   }
+
 }
 
 $(function(){

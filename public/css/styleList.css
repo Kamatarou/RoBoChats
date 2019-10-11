@@ -1,0 +1,22 @@
+body {
+    background: honeydew;
+}
+
+p{
+    font-weight: bold;
+}
+
+p.UserName{
+    font-size: 30px;
+    text-align:center;
+}
+
+p.Content{
+    font-size: 20px;
+    text-align:center;
+}
+
+li {
+    text-align: center;
+    margin-right: 50px;
+  }

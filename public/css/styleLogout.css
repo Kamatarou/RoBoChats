@@ -1,18 +1,15 @@
 body {
     background: honeydew;
-    height: 300vh;
 }
 
 p{
-    font-size: 56px;
+    font-size: 40px;
     font-weight: bold;
-    text-align:center;
-
-    margin: 100px 50px auto;
 }
 
 p.title{
     font-family: ほのか丸ゴシック;
+    text-align:center;
 }
 
 .robot img {
@@ -20,8 +17,8 @@ p.title{
     width:500px;
  }
 
-input#submit_button {
-    width:600px;
+ .sendButton {
+    width:300px;
     font-size:24px;
     font-weight:bold;
     text-decoration:none;
@@ -36,12 +33,5 @@ input#submit_button {
 
     margin-left: auto;
     margin-right: auto;
-}
-
-div.button {
-    text-align:center;
-    }
-div.button input {
-    margin: 150px 0px;
 }
 

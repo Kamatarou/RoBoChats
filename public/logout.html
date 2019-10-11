@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
- <meta http-equiv="content-type" charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1" http-equiv="content-type" charset="utf-8">
  <title>Helper RoBoHoN</title>
  <link rel="stylesheet" href="./css/styleLogout.css">
  
@@ -34,9 +34,10 @@
    <div>
     <p class="title">ログアウトしますか？</p>
    </div>
- <div class="button">
-  <input id="submit_button" type="button" name="button" value="ログアウトする" id="jsi-logout"></button>
-  <input id="submit_button" type="button" name="button" value="戻る" onclick="location.href='./index.html'"></button>
- </div>
+  <div class="button">
+   <button class="sendButton" type="submit" name="button" id="jsi-logout">ログアウトする</button>
+   <p></p>
+   <button class="sendButton" type="submit" name="button" onclick="location.href='./index.html'">戻る</button>
+  </div>
  </body>
 </html>
