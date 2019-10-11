@@ -49,12 +49,14 @@
         <div style="margin:10px;"></div>
         <p class = "title">伝言メッセージ
           <div class="pull pull_s">
-            <select required name="example"  style="font-size:120%;">
+            <form name = "formTime">
+            <select required name="sendTime"  style="font-size:120%;">
                 <option value="" hidden>送る時間を選択してください</option>
-                <option value="選択肢1">朝</option>
-                <option value="選択肢2">昼</option>
-                <option value="選択肢3">夜</option>
+                <option value="morning">朝</option>
+                <option value="noon">昼</option>
+                <option value="night">夜</option>
             </select>
+            </form>
           </div>
         </p>
       </div>
