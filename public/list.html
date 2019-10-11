@@ -4,11 +4,11 @@
 <head>
  <meta name="viewport" content="width=device-width,initial-scale=1" http-equiv="content-type" charset="utf-8">
  <title>Helper RoBoHoN</title>
- <link rel="stylesheet" href="./css/styleChat.css">
+ <link rel="stylesheet" href="./css/styleList.css">
   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="./chatrobo.js"></script>
+  <script src="./list.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
   <script>
@@ -43,26 +43,31 @@
 
   <div>
    <div>
-    <p class="UserName" id="jsi-p" style="list-style:none;">
-    <input type="hidden" name="" id="jsi-name" value="web"/></p>
-   </div>
-
-   
-   <div>
-    <p class="Content">チャットを送ろう！</p>
-    <p class="Content">
-        <button class="chatButton" type="submit" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >チャット</button>
-        <button class="chatButton" type="submit" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true;" >ロボホンとお話し</button>
-        <button class="chatButton" type="submit" name="button" onclick="location.href='./list.html'">一覧表示</button>  
+    <p class="UserName" id="jsi-nickname" style="list-style:none;">
     </p>
-    <textarea class="text" placeholder="内容を入力" id="jsi-mainmsg" cols="30" rows="4"></textarea>
    </div>
-  </div>
 
-  <div>
-    <p></p>
-      <button class="sendButton" type="submit" id="jsi-button" disabled>送信</button>
-  </div>
+   <p>現在の伝言</p>
+   <table border="1">
+    <tr>
+      <th>メッセージ</th><th>対象</th><th>時間帯</th>
+    </tr>
+    <tr>
+      <td id ="jsi-message"></td><td id ="jsi-target"></td><td id ="jsi-time"></td>
+    </tr>
+
+   </table>
+
+   <p>チャット一覧</p>
+   <table border="1">
+    <tr>
+      <th>テキスト</th><th>日時</th><th>感情スコア</th>
+    </tr>
+    <tr>
+      <td>テスト</td><td id ="jsi-date"></td><td id ="jsi-score"></td>
+    </tr>
+
+  </table>
  
   <div style="width:auto;height:1000px;overflow:auto;">
   <ul id="jsi-board" style="list-style:none;">
