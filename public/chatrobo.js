@@ -8,7 +8,7 @@ CHAT.fire = {
 
   setParameters:function(){
     this.$name = $('#jsi-name');
-    this.$textArea = $('#jsi-mainmsg');
+    this.$textArea = $('#jsi-mainmsg')
 
     //チェック
     this.$nickname = $('#jsi-nickname');
