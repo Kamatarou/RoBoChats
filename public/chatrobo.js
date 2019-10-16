@@ -11,7 +11,7 @@ CHAT.fire = {
     this.$textArea = $('#jsi-mainmsg')
 
     //チェック
-    this.$p = $('#jsi-p');
+    this.$nickname = $('#jsi-nickname');
     this.$text = $('#jsi-text');
 
     this.$board = $('#jsi-board');
@@ -43,15 +43,15 @@ CHAT.fire = {
       self.addText(json['message']);
     });
 
-    //チェック
-    this.chatDataStore.child('stats').on('value',function(data){
-       var name = data.child('nickname').val();
-       var username = "ユーザー名："+name;
-       console.log(username);
-       self.changename(username);
-    });
+    //名前
+    this.chatDataStore.child('stats').once('value',function(data){
+      var name = data.child('nickname').val();
+      var nickname = "ユーザー名："+name;
+      console.log(nickname);
+      self.changename(nickname);
+   });
 
-    //チェック
+    //感情
     this.chatDataStore.child('minus').on('child_added',function(data){
        var text = data.val().score;
        var usertext = text;
@@ -95,15 +95,15 @@ CHAT.fire = {
   },
 
   //チェック
-  changename:function(username){
-    var msgDom = $('<li>');
-    msgDom.html(username);
-    this.$p.append(msgDom[0]);
+  changename:function(nickname){
+    var msgDom = $('<p>');
+    msgDom.html(nickname);
+    this.$nickname.append(msgDom[0]);
   },
 
   //チェック
   changetext:function(usertext){
-      var msgDom = $('<li>');
+      var msgDom = $('<p>');
       msgDom.html(usertext);
       this.$text.append(msgDom[0]);
   }
