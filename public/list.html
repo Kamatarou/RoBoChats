@@ -41,38 +41,41 @@
 
  <body>
 
-  <div>
-   <div>
-    <p class="UserName" id="jsi-nickname" style="list-style:none;">
-    </p>
-   </div>
+  <div align="center">
+  <p class="robot">
+    <img src="./css/rogoList.png" alt="ロボット">
+  </p>
+  </div>
 
-   <p>現在の伝言</p>
-   <table border="1">
+   <p>朝の挨拶</p>
+   <table align="center">
     <tr>
-      <th>メッセージ</th><th>対象</th><th>時間帯</th>
+      <th>朝の調子</th><th>寝た時刻</th><th>話した日時</th>
     </tr>
     <tr>
-      <td id ="jsi-message"></td><td id ="jsi-target"></td><td id ="jsi-time"></td>
+      <td align="center" id ="jsi-condition"></td><td align="center" id ="jsi-sleeptime"></td><td align="center" id ="jsi-morningtalk"></td>
     </tr>
-
    </table>
 
-   <p>チャット一覧</p>
-   <table border="1">
+   <p>帰りの挨拶</p>
+   <table align="center">
     <tr>
-      <th>テキスト</th><th>日時</th><th>感情スコア</th>
+      <th>友達と遊んだ？</th><th>学校の調子</th><th>話した日時</th>
     </tr>
     <tr>
-      <td>テスト</td><td id ="jsi-date"></td><td id ="jsi-score"></td>
+      <td align="center" id ="jsi-friend"></td><td align="center" id ="jsi-school"></td><td align="center" id ="jsi-welcometalk"></td>
     </tr>
+   </table>
 
-  </table>
- 
-  <div style="width:auto;height:1000px;overflow:auto;">
-  <ul id="jsi-board" style="list-style:none;">
-    <li>～チャット内容～</li>
-  </ul>
+   <p>寝る前の挨拶</p>
+   <table align="center">
+    <tr>
+      <th>歯磨いた？</th><th>宿題した？</th><th>話した日時</th>
+    </tr>
+    <tr>
+      <td align="center" id ="jsi-brush"></td><td align="center" id ="jsi-study"></td><td align="center" id ="jsi-sleeptalk"></td>
+    </tr>
+   </table>
   </div>
 
  </body>

@@ -4,26 +4,54 @@
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" http-equiv="content-type" charset="utf-8">
     <title>Helper RoBoHoN</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="./chatrobo.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script>
+      
+      var firebaseConfig = {
+      apiKey: "AIzaSyBDRb11DoqqTO3DzsCGPfgRW8kAphD_kgo",
+      authDomain: "chat001-16c14.firebaseapp.com",
+      databaseURL: "https://chat001-16c14.firebaseio.com",
+      projectId: "chat001-16c14",
+      storageBucket: "",
+      messagingSenderId: "770731301137",
+      appId: "1:770731301137:web:33fe6f619c17cb92"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+     <style>
+      ul > li:first-child {
+       color: black;
+       font-size: 25px;
+      }
+      ul > li:nth-child(2n) {
+       color: blue;
+      }
+      ul > li:nth-child(2n):before {
+       content:"ユーザー名："
+      }
+    </style>
   </head>
 
   <body>
-
-    <p class="title">ヘルパーロボホン</p>
+    <p class="title" id="jsi-nickname"></p>
 
     <div align="center">
-    <p class="robot">
-        <img src="./css/photo1.png" alt="ロボット">
-    </p>
-    </div>
-
-    <div>
-      <p></p>
+      <img src="./css/rogo.png" alt="ロボット">
       <button class="sendButton" type="submit" name="button" onclick="location.href='./messageboard.html'">伝言</button>
       <p></p>
-      <button class="sendButton" type="submit" name="button" value="チャット" onclick="location.href='./D_chatrobo.html'">チャット</button>
+      <button class="sendButton" type="submit" name="button" value="チャット" onclick="location.href='./D_chatrobo.html'">ロボホンとお話し</button>
+      <p></p>
+      <button class="sendButton" type="submit" name="button" value="チャット" onclick="location.href='./list.html'">今日の状態</button>
       <p></p>
       <button class="sendButton" type="submit" name="button" value="ログアウト" onclick="location.href='./logout.html'">ログアウト</button>
+      <p></p>
     </div>
   </body>
 </html>

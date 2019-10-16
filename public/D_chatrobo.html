@@ -41,19 +41,12 @@
 
  <body>
 
-  <div>
    <div>
-    <p class="UserName" id="jsi-p" style="list-style:none;">
-    <input type="hidden" name="" id="jsi-name" value="web"/></p>
-   </div>
-
-   
-   <div>
-    <p class="Content">チャットを送ろう！</p>
+    <p class="title">お話ししよう！</p>
     <p class="Content">
-        <button class="chatButton" type="submit" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >チャット</button>
+        <button class="chatButton" type="submit" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >中継して対話</button>
         <button class="chatButton" type="submit" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true;" >ロボホンとお話し</button>
-        <button class="chatButton" type="submit" name="button" onclick="location.href='./list.html'">一覧表示</button>  
+        <!-- <button class="chatButton" type="submit" name="button" onclick="location.href='./list.html'">一覧表示</button>-->  
     </p>
     <textarea class="text" placeholder="内容を入力" id="jsi-mainmsg" cols="30" rows="4"></textarea>
    </div>

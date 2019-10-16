@@ -1,14 +1,16 @@
 body {
-    background: honeydew;
+    background-image: url("triangle-mosaic.png");
+    background-size: cover;
 }
 
 p{
     font-weight: bold;
 }
 
-p.UserName{
-    font-size: 30px;
-    text-align:center;
+p.title{
+    font-size: 50px;
+    font-family: ほのか丸ゴシック;
+    text-align: center;
 }
 
 p.Content{

@@ -10,7 +10,7 @@ CHAT.fire = {
     this.$name = $('#jsi-name');
     this.$textArea = $('#jsi-mainmsg');
 
-    //追加
+    //追加部分
     this.$nickname = $('#jsi-nickname');
     this.$message = $('#jsi-message');
     this.$time = $('#jsi-time');
@@ -19,12 +19,24 @@ CHAT.fire = {
     this.$date = $('#jsi-date');
     this.$score = $('#jsi-score');
 
+    //状態 追加部分
+    this.$condition = $('#jsi-condition');
+    this.$sleeptime = $('#jsi-sleeptime');
+    this.$morningtalk = $('#jsi-morningtalk');
+    this.$friend = $('#jsi-friend');
+    this.$school = $('#jsi-school');
+    this.$welcometalk = $('#jsi-welcometalk');
+    this.$brush = $('#jsi-brush');
+    this.$study = $('#jsi-study');
+    this.$sleeptalk = $('#jsi-sleeptalk');
+
     this.$board = $('#jsi-board');
     this.$button = $('#jsi-button');
     this.$fbotswitch = $('#jsi-switch');
     this.$tbotswitch = $('#jsi-switch2');
     
     this.chatDataStore = new Firebase('https://chat001-16c14.firebaseio.com/');
+    this.chatDataStoreSecond = new Firebase('https://chat001-16c14-a23ae.firebaseio.com/');
   },
 
   bindEvent:function(){
@@ -42,7 +54,6 @@ CHAT.fire = {
 
    
     this.chatDataStore.child("chat").on('child_added',function(data){
-      console.log('on');
       var json = data.val();
       self.addText(json['device']);
       self.addText(json['message']);
@@ -57,54 +68,82 @@ CHAT.fire = {
        self.changename(nickname);
     });
 
-    //伝言
+    //現在の伝言
     this.chatDataStore.child('msgboard').on('child_added',function(data){
       var message = data.val().message;
-      var usermessage = message;
-      console.log(usermessage);
-      self.changemessage(usermessage);
-    });
+      console.log(message);
+      self.changemessage(message);
 
-    //伝言の対象
-    this.chatDataStore.child('msgboard').on('child_added',function(data){
-     var target = data.val().name;
-     var usertarget = target;
-     console.log(usertarget);
-     self.changetarget(usertarget);
-    });
+      var target = data.val().name;
+      console.log(target);
+      self.changetarget(target);
 
-    //時間帯 朝・昼・晩
-    this.chatDataStore.child('msgboard').on('child_added',function(data){
-     var time = data.val().time;
-     var usertime = time;
-     console.log(usertime);
-     self.changetime(usertime);
+      var time = data.val().time;
+      console.log(time);
+      self.changetime(time);
     });
 
     //チャット
     this.chatDataStore.child('minus').on('child_added',function(data){
      var text = data.val().text;
-     var usertext = text;
-     console.log(usertext);
-     self.changetext(usertext);
-    });
+     console.log(text);
+     self.changetext(text);
 
-    //チャット日時
-    this.chatDataStore.child('minus').on('child_added',function(data){
-      var time = data.val().time;
-      var usertime = time;
-      console.log(usertime);
-      self.changedate(usertime);
-    });
+     var date = data.val().time;
+     console.log(date);
+     self.changedate(date);
 
-    //感情
-    this.chatDataStore.child('minus').on('child_added',function(data){
      var score = data.val().score;
-     var userscore = score;
-     console.log(userscore);
-     self.changescore(userscore);
+     console.log(score);
+     self.changescore(score);
     });
-    
+
+    //朝の挨拶 リミットトゥラストで最新版を指定できる。
+    this.chatDataStoreSecond.child('00000000').child('morning').limitToLast(1).on('child_added',function(data){
+      var condition = data.val().condition;
+      console.log(condition);
+      self.changecondition(condition);
+
+      var sleeptimeA = data.val().sleeptime;
+      var sleeptime = sleeptimeA + "時";
+      console.log(sleeptime);
+      self.changesleeptime(sleeptime);
+
+      var morningtalk = data.val().time;
+      console.log(morningtalk);
+      self.changemorningtalk(morningtalk);
+   });
+
+    //帰りの挨拶
+    this.chatDataStoreSecond.child('00000000').child('welcomeback').limitToLast(1).on('child_added',function(data){
+      var friend = data.val().friend;
+      console.log(friend);
+      self.changefriend(friend);
+
+      var school = data.val().school;
+      console.log(school);
+      self.changeschool(school);
+
+      var welcometalk = data.val().time;
+      console.log(welcometalk);
+      self.changewelcometalk(welcometalk);
+   });
+
+    //お休みの挨拶
+    this.chatDataStoreSecond.child('00000000').child('atnight').limitToLast(1).on('child_added',function(data){
+      var brush = data.val().brush;
+      console.log(brush);
+      self.changebrush(brush);
+
+      var study = data.val().study;
+      console.log(study);
+      self.changestudy(study);
+
+      var sleeptalk = data.val().time;
+      console.log(sleeptalk);
+      self.changesleeptalk(sleeptalk);
+   });
+
   },
 
   changeisBotF:function(){
@@ -133,7 +172,7 @@ CHAT.fire = {
     self.$textArea.val('');
   },
 
- 
+  //チャット
   addText:function(json){
    var msgDom = $('<li>');
    msgDom.html(json);
@@ -148,47 +187,109 @@ CHAT.fire = {
   },
 
   //伝言
-  changemessage:function(usermessage){
+  changemessage:function(message){
     var msgDom = $('<tr>');
-    msgDom.html(usermessage);
+    msgDom.html(message);
     this.$message.append(msgDom[0]);
   },
 
   //伝言の対象
-  changetarget:function(usertarget){
+  changetarget:function(target){
     var msgDom = $('<tr>');
-    msgDom.html(usertarget);
+    msgDom.html(target);
     this.$target.append(msgDom[0]);
   },
 
   //時間帯 朝・昼・晩
-  changetime:function(usertime){
+  changetime:function(time){
     var msgDom = $('<tr>');
-    msgDom.html(usertime);
+    msgDom.html(time);
     this.$time.append(msgDom[0]);
   },
 
   //チャット
-  changetext:function(usertext){
+  changetext:function(text){
       var msgDom = $('<tr>');
-      msgDom.html(usertext);
+      msgDom.html(text);
       this.$text.append(msgDom[0]);
   },
 
   //チャット日時
-  changedate:function(userdate){
+  changedate:function(date){
     var msgDom = $('<tr>');
-    msgDom.html(userdate);
+    msgDom.html(date);
     this.$date.append(msgDom[0]);
   },
 
   //感情スコア
-  changescore:function(userscore){
+  changescore:function(score){
       var msgDom = $('<tr>');
-      msgDom.html(userscore);
+      msgDom.html(score);
       this.$score.append(msgDom[0]);
-  }
+  },
 
+  //朝の調子
+  changecondition:function(condition){
+      var msgDom = $('<tr>');
+      msgDom.html(condition);
+      this.$condition.append(msgDom[0]);
+  },
+
+  //昨日の睡眠時間
+  changesleeptime:function(sleeptime){
+      var msgDom = $('<tr>');
+      msgDom.html(sleeptime);
+      this.$sleeptime.append(msgDom[0]);
+  },
+
+  //話した日時(朝)
+  changemorningtalk:function(morningtalk){
+      var msgDom = $('<tr>');
+      msgDom.html(morningtalk);
+      this.$morningtalk.append(msgDom[0]);
+  },
+
+  //友達の調子
+  changefriend:function(friend){
+      var msgDom = $('<tr>');
+      msgDom.html(friend);
+      this.$friend.append(msgDom[0]);
+  },
+
+  //学校の調子
+  changeschool:function(school){
+      var msgDom = $('<tr>');
+      msgDom.html(school);
+      this.$school.append(msgDom[0]);
+  },
+
+  //話した日時(帰り)
+  changewelcometalk:function(welcometalk){
+      var msgDom = $('<tr>');
+      msgDom.html(welcometalk);
+      this.$welcometalk.append(msgDom[0]);
+  },
+
+  //歯磨きした？
+  changebrush:function(brush){
+      var msgDom = $('<tr>');
+      msgDom.html(brush);
+      this.$brush.append(msgDom[0]);
+  },
+
+  //勉強した？
+  changestudy:function(study){
+      var msgDom = $('<tr>');
+      msgDom.html(study);
+      this.$study.append(msgDom[0]);
+  },
+
+  //話した日時(お休み)
+  changesleeptalk:function(sleeptalk){
+      var msgDom = $('<tr>');
+      msgDom.html(sleeptalk);
+      this.$sleeptalk.append(msgDom[0]);
+  }
 
 }
 
