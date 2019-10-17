@@ -38,7 +38,7 @@ CHAT.fire = {
       if(user) {
         self.chatDataStore.child('stats').child('mailAddress').set(email);
         self.chatDataStore.child('stats').child('nickname').set(name);
-        location.href = './index.html';
+        location.href = './login.html';
       }
       else {
        
