@@ -44,19 +44,17 @@
    <div>
     <p class="title">お話ししよう！</p>
     <p class="Content">
-        <button class="chatButton" type="submit" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false; document.all.div1.innerText='～中継して対話中～';">中継して対話</button>
-        <button class="chatButton" type="submit" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true; document.all.div1.innerText='～ロボホンとお話し中～';">ロボホンとお話し</button>
+        <button class="chatButton" type="submit" id="jsi-switch" onclick="getElementById('jsi-button').disabled = false;" >中継して対話</button>
+        <button class="chatButton" type="submit" id="jsi-switch2" onclick="getElementById('jsi-button').disabled = true;" >ロボホンとお話し</button>
         <!-- <button class="chatButton" type="submit" name="button" onclick="location.href='./list.html'">一覧表示</button>-->  
     </p>
     <textarea class="text" placeholder="内容を入力" id="jsi-mainmsg" cols="30" rows="4"></textarea>
    </div>
   </div>
-  
-  <div id="div1" style="font-weight: bold;font-size: 30px;font-family: ほのか丸ゴシック;text-align: center;">～中継して対話中～</div>
 
   <div>
     <p></p>
-      <button class="sendButton" type="submit" id="jsi-button">送信</button>
+      <button class="sendButton" type="submit" id="jsi-button" disabled>送信</button>
   </div>
  
   <div style="width:auto;height:1000px;overflow:auto;">
