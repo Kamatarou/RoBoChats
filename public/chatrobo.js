@@ -74,13 +74,14 @@ CHAT.fire = {
   sendMsg:function(){
     var self = this;
     if (this.$textArea.val() == ''){ return };
-
-    var name = this.$name.val();
+    
+    var name = "ロボホン";
     var text = this.$textArea.val();
     var key = self.chatDataStore.push().toString();
     //文字の切り出し
     var fkey = key.substr(key.indexOf(".com/")+5);
-	  console.log("fkey->" + fkey);
+    console.log("fkey->" + fkey);
+    console.log("device->" + name);
     
     
     self.chatDataStore.child("chat").child(fkey).set({device:name, message:text, firebasekey:fkey, isSpeech:'true'});
