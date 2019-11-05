@@ -101,10 +101,12 @@ CHAT.fire = {
     //朝の挨拶 リミットトゥラストで最新版を指定できる。
     this.chatDataStoreSecond.child('00000000').child('morning').limitToLast(1).on('child_added',function(data){
       var condition = data.val().condition;
-      console.log(condition);
-      self.changecondition(condition);
+      var cond = data.val().param2;
+      console.log(cond);
+      self.changecondition(cond);
 
-      var sleeptimeA = data.val().sleeptime;
+      //var sleeptimeA = data.val().sleeptime;
+      var sleeptimeA = data.val().param3;
       var sleeptime = sleeptimeA + "時";
       console.log(sleeptime);
       self.changesleeptime(sleeptime);
