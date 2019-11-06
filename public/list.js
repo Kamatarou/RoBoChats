@@ -102,11 +102,22 @@ CHAT.fire = {
     this.chatDataStoreSecond.child('00000000').child('morning').limitToLast(1).on('child_added',function(data){
       var condition = data.val().condition;
       var cond = data.val().param2;
+      if(!cond){
+        cond = "---";
+      }
       console.log(cond);
       self.changecondition(cond);
 
       //var sleeptimeA = data.val().sleeptime;
       var sleeptimeA = data.val().param3;
+      if(!sleeptimeA){
+        if(data.val().param4){
+          sleeptimeA = data.val().param4;
+        }
+        else{
+          sleeptimeA = "--";
+        }
+      }
       var sleeptime = sleeptimeA + "時";
       console.log(sleeptime);
       self.changesleeptime(sleeptime);
