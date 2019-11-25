@@ -30,6 +30,11 @@ CHAT.fire = {
     this.$study = $('#jsi-study');
     this.$sleeptalk = $('#jsi-sleeptalk');
 
+    //状態 マイナス感情の取得
+    this.$minusScore = $('#jsi-minusScore');
+    this.$minusText = $('#jsi-minusText');
+    this.$minusTime = $('#jsi-minusTime');
+
     this.$board = $('#jsi-board');
     this.$button = $('#jsi-button');
     this.$fbotswitch = $('#jsi-switch');
@@ -155,6 +160,22 @@ CHAT.fire = {
       var sleeptalk = data.val().time;
       console.log(sleeptalk);
       self.changesleeptalk(sleeptalk);
+   });
+
+    //マイナス感情の取得
+    this.chatDataStore.child('minus').limitToLast(1).on('child_added',function(data){
+      var score = data.val().score;
+      score = score * 10;
+      var minusScore = Math.round(score);
+      minusScore = minusScore / 10
+      self.changeminusScore(minusScore);
+
+      var minusText = data.val().text;
+      self.changeminusText(minusText);
+
+      var miTime = data.val().time;
+      var minusTime = miTime.substring(5,16);
+      self.changeminusTime(minusTime);
    });
 
   },
@@ -302,6 +323,27 @@ CHAT.fire = {
       var msgDom = $('<tr>');
       msgDom.html(sleeptalk);
       this.$sleeptalk.append(msgDom[0]);
+  },
+
+  //スコア(－)
+  changeminusScore:function(minusScore){
+      var msgDom = $('<tr>');
+      msgDom.html(minusScore);
+      this.$minusScore.append(msgDom[0]);
+  },
+
+  //テキスト(－)
+  changeminusText:function(minusText){
+      var msgDom = $('<tr>');
+      msgDom.html(minusText);
+      this.$minusText.append(msgDom[0]);
+  },
+
+  //話した日時(－)
+  changeminusTime:function(minusTime){
+      var msgDom = $('<tr>');
+      msgDom.html(minusTime);
+      this.$minusTime.append(msgDom[0]);
   }
 
 }

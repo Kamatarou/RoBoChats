@@ -1,11 +1,18 @@
 body {
     background-image: url("triangle-mosaic.png");
     background-size: cover;
+    overflow: hidden;
 }
 
 p{
     font-size: 26px;
     font-weight: bold;
+}
+
+p.message{
+    font-family: ほのか丸ゴシック;
+    text-align: center;
+    font-size:50px;
 }
 
 p.title{
@@ -47,7 +54,21 @@ p.title{
     margin-right: auto;
 }
 
-li {
+ul {
+    background: #fffde8;
+    box-shadow: 0px 0px 0px 10px #fffde8;/*線の外側*/
+    border: dashed 2px #ffb03f;/*破線*/
+    border-radius: 9px;
+    margin-left: 10px;/*はみ出ないように調整*/
+    margin-right: 10px;/*はみ出ないように調整*/
+    padding: 0.5em 0.5em 0.5em 2em;
+  }
+
+ul li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+
+    font-size: 30px;
     text-align: center;
     margin-right: 50px;
 }
