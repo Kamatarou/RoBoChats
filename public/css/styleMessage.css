@@ -5,14 +5,14 @@ body {
 }
 
 p{
-    font-size: 26px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 p.message{
     font-family: ほのか丸ゴシック;
     text-align: center;
-    font-size:50px;
+    font-size:30px;
 }
 
 p.title{
@@ -37,8 +37,8 @@ p.title{
 }
 
 .sendButton {
-    width:300px;
-    font-size:24px;
+    width:200px;
+    font-size:15px;
     font-weight:bold;
     text-decoration:none;
     display:block;
@@ -68,7 +68,7 @@ ul li {
     line-height: 1.5;
     padding: 0.5em 0;
 
-    font-size: 30px;
+    font-size: 15px;
     text-align: center;
     margin-right: 50px;
 }
@@ -80,7 +80,7 @@ ul li {
     background-color: snow;     /* 背景色 */
     width: 100%;                  /* 横幅いっぱいにする */
     box-sizing: border-box;       /* ※これがないと横にはみ出る */
-    height: 100px;                /* 高さ */
+    height: 50px;                /* 高さ */
     font-size: 1em;               /* 文字サイズ */
     line-height: 1.2;             /* 行の高さ */
 }

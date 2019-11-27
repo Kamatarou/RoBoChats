@@ -66,8 +66,8 @@ CHAT.fire = {
 
     //追加部分
     //名前
-    this.chatDataStore.child('stats').on('value',function(data){
-       var name = data.child('nickname').val();
+    this.chatDataStore.child('stats').child('nickname').on('value',function(data){
+       var name = data.val();
        var nickname = "ユーザー名："+name;
        console.log(nickname);
        self.changename(nickname);
