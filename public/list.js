@@ -104,8 +104,9 @@ CHAT.fire = {
     });
 
     //朝の挨拶 リミットトゥラストで最新版を指定できる。
-    this.chatDataStoreSecond.child('00000000').child('morning').limitToLast(1).on('child_added',function(data){
+    this.chatDataStoreSecond.child('00000000').child("morning").limitToFirst(1).on('child_added',function(data){
       var condition = data.val().condition;
+      console.log(data.key());
       var cond = data.val().param2;
       if(!cond){
         cond = "---";
@@ -133,12 +134,12 @@ CHAT.fire = {
    });
 
     //帰りの挨拶
-    this.chatDataStoreSecond.child('00000000').child('welcomeback').limitToLast(1).on('child_added',function(data){
-      var friend = data.val().friend;
+    this.chatDataStoreSecond.child('00000000').child('welcomeback').limitToFirst(1).on('child_added',function(data){
+      var friend = data.val().param2;
       console.log(friend);
       self.changefriend(friend);
 
-      var school = data.val().school;
+      var school = data.val().param3;
       console.log(school);
       self.changeschool(school);
 
@@ -148,12 +149,12 @@ CHAT.fire = {
    });
 
     //お休みの挨拶
-    this.chatDataStoreSecond.child('00000000').child('atnight').limitToLast(1).on('child_added',function(data){
-      var brush = data.val().brush;
+    this.chatDataStoreSecond.child('00000000').child('atnight').limitToFirst(1).on('child_added',function(data){
+      var brush = data.val().param2;
       console.log(brush);
       self.changebrush(brush);
 
-      var study = data.val().study;
+      var study = data.val().param3;
       console.log(study);
       self.changestudy(study);
 
