@@ -10,6 +10,7 @@ CHAT.fire = {
     this.$textArea = $('#jsi-mainmsg');
     this.$board = $('#jsi-msgboard');
     this.$button = $('#jsi-setbtn');
+    this.$btnswing_h = $('#jsi-setswinghead')
 
     
     this.chatDataStore = new Firebase('https://chat001-16c14.firebaseio.com/');
@@ -19,6 +20,10 @@ CHAT.fire = {
     var self = this;
     this.$button.on('click',function(){
       self.sendMsg();
+    });
+
+    this.$btnswing_h.on('click',function(){
+      self.swingHead();
     });
 
    
@@ -50,7 +55,14 @@ CHAT.fire = {
     document.location.reload(true);
   },
 
- 
+  swingHead:function(){
+    var self = this;
+    console.log("swinghead");
+
+    self.chatDataStore.child("stats").child("isSwing").set(true);
+    document.location.reload(true);
+  },
+  
   addText:function(json){
    var msgDom = $('<li>');
    msgDom.html(json);
