@@ -70,7 +70,7 @@ CHAT.fire = {
        var name = data.val();
        var nickname = "ユーザー名："+name;
        console.log(nickname);
-       self.changename(nickname);
+       //self.changename(nickname);
     });
 
     //現在の伝言
